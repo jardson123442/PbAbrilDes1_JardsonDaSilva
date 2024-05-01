@@ -36,7 +36,11 @@ public class Pessoa {
     // Metodo para imprimir a arvore genealogica
     public void imprimirArvore(int espacos) {
         espacos(espacos);
-        System.out.println(name + "-- Casado(a) com: " + (conjugue != null ? conjugue.name : "") + " -- Filhos: " + filhos.size());
+        if (conjugue != null) {
+            System.out.println(name + "-- Casado(a) com: " + (conjugue != null ? conjugue.name : "") + " -- Filhos: " + filhos.size());
+        } else {
+            System.out.println(name + "-- Solteiro(a)");
+        }
         for (Pessoa filho : filhos) { // percorre a lista de filhos
             filho.imprimirArvore(espacos + 1); // chama o metodo recursivamente para imprimir os filhos, de modo que se o filho tiver filhos, esses filhos também serão impressos
         }
