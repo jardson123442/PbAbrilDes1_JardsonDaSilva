@@ -1,58 +1,51 @@
 package entidades;
 
+import java.util.ArrayList;
+
+
 public class Pessoa {
-    private String nome;
-    private String conjugue;
-    private String filho;
+    private String name;
+    private Pessoa conjugue;
+    private ArrayList<Pessoa> filhos = new ArrayList<>();
+    private Pessoa pais; // pai/mãe da pessoa atual que está sendo criada
 
-    public Pessoa(String nome) {
-        this.nome = nome;
+    public Pessoa(String name) {
+        this.name = name;
     }
 
-    public Pessoa(String nome, Pessoa conjugue) {
-        this.nome = nome;
-        this.conjugue = conjugue.getNome();
+    // Metodo que cria uma pessoa com um pai/mãe
+    public Pessoa(String name, Pessoa pais) {
+        this.name = name; // nome do filho
+        this.pais = pais; // pai/mãe
+        pais.adicionarfilho(this); // adiciona o filho ao pai/mãe
     }
 
-    public void adicionarConjugue(String conjugue) {
-        this.conjugue = conjugue;
-    }
-
-    public Pessoa(String nome, String conjugue, String filho) {
-        this.nome = nome;
-        this.conjugue = conjugue;
-        this.filho = filho;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getConjugue() {
-        return conjugue;
+    // adiciona filho sendo uma pessoa
+    public void adicionarfilho(Pessoa filhoMain) {
+        filhos.add(filhoMain); // adiciona o filho a lista de filhos
+        filhoMain.pais = this; // adiciona o pai/mãe ao filho
     }
 
 
-    public String getFilho() {
-        return filho;
+    // Metodo que cria esposo(a) e faz a ligação entre os dois
+    public void adicionarConjugue(Pessoa conjugueMain) {
+        this.conjugue = conjugueMain; // adiciona o conjugue
+        conjugue.conjugue = this; // relaciona o conjugue com a pessoa
     }
 
-    public void adicionarFilho(String filho) {
-        this.filho = filho;
-    }
-
-    public void imprimirArvore() {
-
-        System.out.print(nome + " -- ");
-        if (conjugue != null) {
-            System.out.print("Conjugue de: " + conjugue);
+    // Metodo para imprimir a arvore genealogica
+    public void imprimirArvore(int espacos) {
+        espacos(espacos);
+        System.out.println(name + "-- Casado(a) com: " + (conjugue != null ? conjugue.name : "") + " -- Filhos: " + filhos.size());
+        for (Pessoa filho : filhos) { // percorre a lista de filhos
+            filho.imprimirArvore(espacos + 1); // chama o metodo recursivamente para imprimir os filhos, de modo que se o filho tiver filhos, esses filhos também serão impressos
         }
-        if (filho != null) {
-            System.out.print(" -- Filho: \n" + filho);
+    }
+
+    // adiciona espaços
+    private void espacos(int contador) {
+        for (int i = 0; i < contador; i++) {
+            System.out.print("    ");  // imprime 4 espaços, quando o metodo printFamilyTree é chamado, ele imprime 4 espaços a mais, assim sucessivamente
         }
     }
 }
