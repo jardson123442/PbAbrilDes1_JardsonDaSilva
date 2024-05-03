@@ -3,32 +3,24 @@ package entidades;
 
 
 public class Crianca extends Pessoa {
-    private Pessoa pais;
+    private Adulto responsavel;
 
 
-    public Crianca(String nome, int idade, Pessoa pais) {
+    public Crianca(String nome, int idade, Adulto responsavel) {
         super(nome, idade);
-        adicionaPais(pais);
-    }
-    public void adicionaPais(Pessoa mainPais) {
-        setPais(mainPais);
+        this.responsavel = responsavel;
     }
 
-    public Crianca(String nome, int idade) {
-        super(nome, idade);
+    public Adulto getResponsavel() {
+        return responsavel;
     }
 
-
-    public Pessoa getPais() {
-        return pais;
-    }
-
-    public void setPais(Pessoa pais) {
-        this.pais = pais;
+    public void setResponsavel(Adulto responsavel) {
+        this.responsavel = responsavel;
     }
 
     @Override
     public String toString() {
-        return getNome() + " Idade: " + getIdade() + " Pais: " + getPais();
+        return getNome() + " Idade: " + getIdade() + " Responsavel: " + getResponsavel();
     }
 }

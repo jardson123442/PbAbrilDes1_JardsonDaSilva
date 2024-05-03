@@ -9,6 +9,15 @@ public class Pessoa {
         this.idade = idade;
     }
 
+
+    public void Pessoa(String nome, int idade) {
+        this.nome = null;
+        this.idade = 0;
+    }
+
+
+
+
     public String getNome() {
         return nome;
     }
