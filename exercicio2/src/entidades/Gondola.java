@@ -14,6 +14,10 @@ public class Gondola  {
         this.assento2 = assento2;
     }
 
+    public Gondola( Pessoa assento1) {
+        this.assento1 = assento1;
+    }
+
     public void lugar(int indice, Pessoa assento1, Pessoa assento2) {
         gondolas[indice] = new Gondola(assento1, assento2);
     }

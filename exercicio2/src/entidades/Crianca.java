@@ -6,9 +6,22 @@ public class Crianca extends Pessoa {
     private Adulto responsavel;
 
 
+    public Crianca(String nome, int idade) {
+        super(nome, idade);
+
+
+    }
+
+
     public Crianca(String nome, int idade, Adulto responsavel) {
         super(nome, idade);
         this.responsavel = responsavel;
+    }
+    public boolean validacaoCrianca(Crianca crianca) {
+        if(crianca.getIdade() < 12) {
+            return true;
+        }
+        return false;
     }
 
     public Adulto getResponsavel() {
