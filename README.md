@@ -47,7 +47,7 @@ Certifique-se de ter o Java Development Kit 17 (JDK) instalado em sua máquina a
 ## Ferramentas auxiliares
 
 - ChatGPT
-- Youtube
 - Documentação Java (https://docs.oracle.com/javase/8/docs/api/overview-summary.html)
 - Documentação SQL(https://dev.mysql.com/doc/)
+- Youtube
 
