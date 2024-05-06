@@ -7,7 +7,7 @@ Este repositório contém os 3 cenários de desafio e também o desafio extra. O
 
 - **Java:** Uma linguagem de programação amplamente utilizada para desenvolvimento de software.
 - **MySQL** Um sistema de gerenciamento de banco de dados relacional amplamente utilizado
-- **GitHub Dasktop:** Uma interface gráfica para o Git que facilita a interação com repositórios Git no seu computador.
+- **GitHub Desktop:** Uma interface gráfica para o Git que facilita a interação com repositórios Git no seu computador.
 
 
 ## Pré-requisitos
