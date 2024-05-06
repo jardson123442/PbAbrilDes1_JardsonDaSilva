@@ -22,7 +22,7 @@ Certifique-se de ter o Java Development Kit 17 (JDK) instalado em sua máquina a
 
 2. **Acesse o diretório do projeto:**
 
-   cd CRUD
+   cd PbAbrilDes1_JardsonDaSilva
 
 3. **Instale as dependências:**
 
